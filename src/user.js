@@ -266,6 +266,12 @@ export function updateUserGroup({
   });
 }
 
+export function whoAmI({headers: propsHeaders}) {
+  const path = '/API/whoami';
+  const headers = {...propsHeaders, accept: 'text/plain'};
+  return vFetch({path, headers});
+}
+
 export function getToken({
   userName,
   queryParams,
